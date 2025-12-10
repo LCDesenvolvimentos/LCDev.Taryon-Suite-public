@@ -1,11 +1,14 @@
-# LC Desenvolvimentos - GitHub Template
+# LC Desenvolvimentos - Taryon Suite
 
 [![License: CC BY-NC-ND](https://img.shields.io/badge/License-CC--BY--NC--ND-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 [![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.1234567-blue.svg)](https://doi.org/10.5281/zenodo.1234567)
 [![Hugging Face](https://img.shields.io/badge/Hugging_Face-lcdev-yellowgreen.svg)](https://huggingface.co/lcdev)
 [![Research](https://img.shields.io/badge/Research-AI%20%7C%20ML-orange.svg)](#linhas-de-pesquisa)
 
-> Professional GitHub repository template for AI research, software development, and academic collaborations
+> Taryon Suite HDL Tools
+> Taryon Simulus
+> Taryon Synthara
+> Taryon Veritas
 
 ## Table of Contents
 

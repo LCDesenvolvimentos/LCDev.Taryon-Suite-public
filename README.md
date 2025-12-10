@@ -1,402 +1,199 @@
-# LC Desenvolvimentos - Taryon Suite
+# Taryon Suite
 
 [![License: CC BY-NC-ND](https://img.shields.io/badge/License-CC--BY--NC--ND-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.1234567-blue.svg)](https://doi.org/10.5281/zenodo.1234567)
-[![Hugging Face](https://img.shields.io/badge/Hugging_Face-lcdev-yellowgreen.svg)](https://huggingface.co/lcdev)
-[![Research](https://img.shields.io/badge/Research-AI%20%7C%20ML-orange.svg)](#linhas-de-pesquisa)
 
-> Taryon Suite HDL Tools
-> Taryon Simulus
-> Taryon Synthara
-> Taryon Veritas
+A next-generation, professional-grade HDL toolchain for Verilog (IEEE-1364). Taryon Suite provides a unified, high-performance environment for simulation, synthesis, and formal verification, engineered to meet the rigorous demands of modern ASIC and FPGA design flows.
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Research Lines](#research-lines)
-- [Getting Started](#getting-started)
-- [Template Structure](#template-structure)
-- [Issue Templates](#issue-templates)
-- [Methodology](#methodology)
-- [Contributing](#contributing)
-- [Support](#support)
-- [License](#license)
+---
 
 ## Overview
 
-The LC Desenvolvimentos Template is a comprehensive solution for AI research projects, software development, and academic collaborations. It combines academic rigor with industrial efficiency, offering a professional structure for project management, team collaboration, and scientific software development.
+Taryon Suite is a comprehensive collection of three tightly integrated tools, each a powerhouse in its own right:
 
-### Who Is This Template For?
+*   **Taryon Simulus:** A blazing-fast, standards-compliant Verilog simulator.
+*   **Taryon Synthara:** An advanced RTL synthesis engine with superior optimization capabilities.
+*   **Taryon Veritas:** A robust formal verification platform for exhaustive design validation.
 
-- **Academic Researchers**: Specialized tools for AI research
-- **Software Developers**: Professional development standards
-- **Companies**: Corporate structure for technical projects
-- **Collaborators**: Clear processes for contributions
-- **Students**: Professional environment for learning
+Designed for engineers who demand precision, performance, and reliability, Taryon Suite bridges the gap between open-source accessibility and commercial-grade functionality.
 
-## Features
+---
 
-### Academic Research Focus
-- **Specialized Templates**: Structured issues for different research types
-- **4-Step Methodology**: Theoretical formulation → Experimentation → Reproducibility → Application
-- **Academic Integration**: Support for papers, benchmarks, and publication
-- **Reproducibility**: Structures that guarantee experiment replication
+## Key Features
 
-### AI/ML Specialization
-- **Supported Frameworks**: PyTorch, TensorFlow, JAX, Hugging Face
-- **Model Management**: Structures for large models and datasets
-- **Benchmarking**: Templates for performance comparison
-- **MLOps**: Integration with MLOps tools
+*   **100% IEEE-1364 Compliant:** Full support for the Verilog-2005 standard, ensuring maximum portability and correctness.
+*   **Unified Toolchain:** Seamless interoperability between simulation, synthesis, and formal verification.
+*   **High-Performance Core:** Multi-threaded and optimized algorithms for handling today's massive designs.
+*   **Professional Workflow:** Compatible with industry-standard practices and file formats (SDC, Liberty, EDIF, VCD, FST).
+*   **Cross-Platform:** Built and tested on Linux, macOS, and Windows.
+*   **Extensible Architecture:** Plugin support for custom libraries, verification IP, and tool integration.
 
-### Professional Corporate
-- **Governance**: CODEOWNERS, security policies
-- **Processes**: Scrum templates, structured pull requests
-- **Quality**: Checklists, code standards, testing
-- **Compliance**: Legal and ethical documentation
+---
 
-### Community and Collaboration
-- **Multi-stakeholder**: Support for academics, industry, community
-- **Communication**: Multiple support and discussion channels
-- **Recognition**: Credit and acknowledgment system
-- **Growth**: Tools for building community
+## Toolset Deep Dive
 
-## Research Lines
+### Taryon Simulus - High-Performance Verilog Simulator
 
-This template supports our main AI research lines:
+Taryon Simulus is a state-of-the-art simulator that delivers the speed of compiled simulators with the flexibility of interpretive ones. It is designed for both rapid interactive debugging and massive regression testing.
 
-### EffiQuant Nexus
-**Framework for Adaptive Model Compression with Performance Guarantee**
-- Combination of dynamic quantization, structured pruning, and knowledge distillation
-- Real-time feedback to maintain operational accuracy
-- Drastic reduction in computational footprint
+**Core Capabilities:**
 
-### ParamSpace Bridge
-**Interoperable Mapping of Parametric Spaces between Model Architectures**
-- Rigorous mathematical theory for translating knowledge between models
-- Elimination of intensive computational rework
-- Interoperability between different paradigms
+*   **Multiple Execution Modes:**
+    *   **Interpretive Mode:** Fast compilation, ideal for interactive testbench development and debugging, similar to Icarus Verilog.
+    *   **Optimized Compiled Mode:** Generates a high-performance C++ model for cycle-accurate simulation, offering speeds comparable to Verilator.
+    *   **Hybrid Mode:** A unique blend allowing designers to compile performance-critical modules while keeping others in interpretive mode for maximum flexibility.
+*   **Advanced Debugging:**
+    *   Full-featured GUI and command-line interface.
+    *   Waveform dump in VCD and FST formats.
+    *   Interactive breakpoints, signal watching, and code execution tracing.
+    *   Comprehensive code coverage analysis (line, toggle, branch, FSM).
+*   **Language & API Support:**
+    *   Complete support for all Verilog-1364 constructs, including generate blocks, UDPs, and specify blocks.
+    *   Full PLI/VPI (Programming Language Interface) support for C/C++ co-simulation and custom tool development.
+*   **Performance:**
+    *   Multi-threaded kernel for parallel simulation on multi-core systems.
+    *   Optimized memory management for handling designs with hundreds of millions of gates.
 
-### TaskTailor
-**Framework for Automated Generation of Specialized Micro-Models**
-- Meta-learning and Bayesian optimization
-- Identification of minimum necessary architecture
-- Elimination of redundant components
+### Taryon Synthara - Advanced RTL Synthesis Engine
 
-### CogniFlow
-**Modular Architecture for AI Agents with Hierarchical Reasoning**
-- Error recovery mechanisms based on simulation
-- Hierarchical reasoning for continuous operation
-- Dynamic and adaptive environment
+Taryon Synthara is a superior RTL synthesis tool that transforms high-level Verilog descriptions into optimized gate-level netlists. It leverages cutting-edge algorithms to achieve results that surpass open-source alternatives and rival industry leaders.
 
-### NeuroMimic
-**Platform for Neuromorphic Models Based on Cortical Circuits**
-- Simulation of neural action potential dynamics
-- Biomimetic precision for efficient processing
-- Similar to human brain in energy consumption
+**Core Capabilities:**
 
-### ArchSynth
-**System for Automated Synthesis of Hybrid Architectures**
-- Combination of best elements from different paradigms
-- Advanced Neural Architecture Search
-- Adaptation based on task-specific characteristics
+*   **Comprehensive Optimization:**
+    *   **Timing-Driven Synthesis:** Meets aggressive clock frequency targets with advanced timing analysis and optimization.
+    *   **Resource & Area Optimization:** Intelligent resource sharing, logic minimization, and gate-sizing to reduce footprint.
+    *   **Power Optimization:** Multi-Vth and clock-gating insertion for dynamic and static power reduction.
+    *   **Advanced FSM Synthesis:** Automatic state encoding (one-hot, binary, Gray, Johnson) and optimization.
+*   **Target Technology Support:**
+    *   **FPGA:** Dedicated optimizations and library support for major FPGA families (e.g., Xilinx, Intel Microsemi).
+    *   **ASIC:** Full support for standard cell libraries in Liberty (.lib) format.
+*   **Constraint & Language Support:**
+    *   Full support for Synopsys Design Constraints (SDC) for precise control over timing, area, and power.
+    *   Reads and synthesizes all synthesizable Verilog-1364 constructs.
+*   **Analysis & Reporting:**
+    *   Detailed post-synthesis reports for area, timing (slack analysis), and power consumption.
+    *   Generates netlists in Verilog, EDIF, and JSON for downstream flows.
+
+### Taryon Veritas - Formal Verification Platform
+
+Taryon Veritas provides exhaustive, mathematical proof of your design's correctness, uncovering bugs that are impossible to find with simulation alone. It ensures your design behaves as intended under all possible conditions.
+
+**Core Capabilities:**
+
+*   **Property-Based Checking:**
+    *   A powerful model checking engine based on advanced SAT/SMT solvers.
+    *   Supports assertions defined using a Verilog-compatible property language or embedded in comments.
+    *   Exhaustively proves properties like safety, liveness, and absence of deadlocks.
+*   **Equivalence Checking:**
+    *   Mathematically proves that two versions of a design are functionally identical.
+    *   Ideal for validating that a post-synthesis or post-layout netlist is equivalent to the original RTL source code.
+*   **Debugging & Analysis:**
+    *   Automatic counter-example (trace) generation for failing properties.
+    *   Traces can be viewed in waveform viewers to easily understand the root cause of a bug.
+    *   Cone-of-influence analysis to focus verification efforts on relevant parts of the design.
+*   **Integration:**
+    *   Reads designs, libraries, and constraints from the same sources as Simulus and Synthara, ensuring a smooth verification flow.
+
+---
 
 ## Getting Started
 
 ### Prerequisites
 
-- **Git** installed
-- **GitHub account**
-- **Code editor** (VS Code recommended)
-- **Python 3.8+** (for Python projects)
-- **Basic knowledge** of Git and GitHub
+*   A C++17 compliant compiler (e.g., GCC 9+, Clang 10+).
+*   CMake 3.15 or newer.
+*   Make or Ninja.
+* (Optional) GTK+ 3.0 for the graphical waveform viewer.
 
-### Quick Installation
+### Installation
 
-1. **Use the Template**
-   ```bash
-   # Click "Use this template" on GitHub
-   # or clone directly
-   git clone https://github.com/LCDesenvolvimentos/LCDev.GitRepoTemplate.git
-   cd template
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/your-org/taryon-suite.git
+cd taryon-suite
 
-2. **Configure Your Project**
-   ```bash
-   # Edit your project information
-   # Customize templates as needed
-   # Configure integrations
-   ```
+# Create a build directory
+mkdir build && cd build
 
-3. **Start Developing**
-   ```bash
-   # Create your first branch
-   git checkout -b feature/first-feature
-   
-   # Make your changes
-   # Use issue templates to organize work
-   ```
+# Configure and build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j$(nproc)
 
-### Customization
-
-Edit the following files to adapt to your project:
-
-- **README.md**: Your project information
-- **CITATION.cff**: Academic citations
-- **.github/CODEOWNERS**: Responsible parties for different areas
-- **Issue Templates**: Adapt to your specific needs
-
-## Template Structure
-
+# (Optional) Install system-wide
+sudo make install
 ```
-LC Desenvolvimentos Template
-├── .github/
-│   ├── issue_templates/
-│   │   ├── bug_report.yml
-│   │   ├── feature_request.yml
-│   │   ├── user_story.yml
-│   │   ├── task.yml
-│   │   ├── epic.yml
-│   │   ├── research_task.yml
-│   │   └── config.yml
-│   ├── CODEOWNERS
-│   ├── CODE_OF_CONDUCT.md
-│   ├── FUNDING.yml
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   ├── SECURITY.md
-│   └── SUPPORT.md
-├── .gitattributes
-├── .gitignore
-├── CHANGELOG.md
-├── CITATION.cff
-├── CONTRIBUTING.md
-├── LICENSE
-└── README.md
-```
-
-## Issue Templates
-
-### Bug Report
-**For reporting issues found**
-- Structured form with specific fields
-- Sections for reproduction steps, environment, screenshots
-- Automatic labels for categorization
-
-### Feature Request
-**For suggesting new features**
-- Research context and methodology
-- Expected benefits and success metrics
-- Clear acceptance criteria
-
-### User Story
-**For defining user stories (Scrum style)**
-- Template: "As a [user], I want [functionality], so that [benefit]"
-- Acceptance criteria and definition of done
-- Estimates and planning
-
-### Task
-**For specific technical tasks**
-- Detailed technical scope
-- Dependencies and completion criteria
-- Success metrics
-
-### Epic
-**For large strategic objectives**
-- Multi-phase implementation roadmap
-- Stakeholders and success metrics
-- Timeline and dependencies
-
-### Research Task
-**For academic research tasks**
-- 4-step research methodology
-- Experimental design and hypotheses
-- Benchmarks and expected results
-
-## Methodology
-
-### Our 4-Step Approach
-
-#### 1. Rigorous Theoretical Formulation
-- **Solid mathematical foundation** with theorems and propositions
-- **Theoretical limits** clearly established
-- **Conceptual frameworks** well defined
-- **Research hypotheses** clearly formulated
-
-#### 2. Controlled Experimentation
-- **Methodically designed** experimental protocol
-- **Established reference** benchmarks
-- **Quantifiable evaluation** metrics
-- **Rigorous experimental** controls
-
-#### 3. Academic Reproducibility
-- **Open source** with complete documentation
-- **Training data** clearly defined
-- **Experimental procedures** documented
-- **Reproducible environment** specified
-
-#### 4. Practical Application
-- **Real use cases** identified and validated
-- **Industrial partners** involved in the process
-- **Validation scenarios** in real environment
-- **Practical impact** demonstrated and measured
-
-## Contributing
-
-We welcome contributions from the entire community! See our [Contributing Guide](CONTRIBUTING.md) for details on:
-
-- How to fork and set up the environment
-- Code and documentation standards
-- Pull request process
-- Types of contributions accepted
-- Research methodology
-
-### Types of Contributions
-
-- **Bug Fixes**: Bugs, performance issues
-- **Features**: New features, improvements
-- **Research**: Algorithms, methodologies
-- **Documentation**: Guides, tutorials, references
-- **Tests**: Test cases, coverage
-- **Infrastructure**: CI/CD, tools
-
-### Communication Channels
-
-- **GitHub Issues**: For bugs and technical discussions
-- **GitHub Discussions**: For general questions
-- **Email**: [lcdev@lcdesenvolvimentos.com.br](mailto:lcdev@lcdesenvolvimentos.com.br)
-- **Hugging Face**: [https://huggingface.co/lcdev](https://huggingface.co/lcdev)
-
-## Support
-
-### Main Contact
-- **Email**: [lcdev@lcdesenvolvimentos.com.br](mailto:lcdev@lcdesenvolvimentos.com.br)
-- **Website**: [https://lcdesenvolvimentos.github.io/](https://lcdesenvolvimentos.github.io/)
-- **Hugging Face**: [https://huggingface.co/lcdev](https://huggingface.co/lcdev)
-
-### Support Types
-
-- **Research Support**: Methodology, experimentation
-- **Industrial Partnerships**: Collaboration, R&D
-- **Technical Support**: Implementation, troubleshooting
-- **Security**: Vulnerabilities, security issues
-
-### Response Times
-
-| Type | Time |
-|------|------|
-| **Security** | 2-4 hours |
-| **Emergency** | 2-4 hours |
-| **Critical Bug** | 24 hours |
-| **General Question** | 24-48 hours |
-| **Research** | 48-72 hours |
-| **Partnerships** | 72+ hours |
-
-## Statistics
-
-![GitHub stars](https://img.shields.io/github/stars/LCDesenvolvimentos/LCDev.GitRepoTemplate?style=social)
-![GitHub forks](https://img.shields.io/github/forks/LCDesenvolvimentos/LCDev.GitRepoTemplate?style=social)
-![GitHub issues](https://img.shields.io/github/issues/LCDesenvolvimentos/LCDev.GitRepoTemplate)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/LCDesenvolvimentos/LCDev.GitRepoTemplate)
-![GitHub license](https://img.shields.io/github/license/LCDesenvolvimentos/LCDev.GitRepoTemplate)
-
-## Acknowledgment
-
-### Contributors
-We thank all contributors who help improve this template:
-
-<!-- Contributors will be automatically updated via GitHub -->
-
-### Papers and Publications
-When using this template for research, please cite:
-
-```bibtex
-@software{LCDesenvolvimentos2025,
-  title={LC Desenvolvimentos GitHub Template},
-  author={{LC Desenvolvimentos Team}},
-  version={1.0.0},
-  date={2025-12-10},
-  url={https://github.com/LCDesenvolvimentos/LCDev.GitRepoTemplate},
-  license={CC BY-NC-ND}
-}
-```
-
-## Roadmap
-
-### Short Term (Q1 2025)
-- [ ] GitHub Actions templates for CI/CD
-- [ ] Integration with Weights & Biases
-- [ ] Templates for different frameworks (PyTorch, TensorFlow)
-- [ ] Translated documentation (Portuguese, English)
-
-### Medium Term (Q2-Q3 2025)
-- [ ] Customizable plugin system
-- [ ] Integration with academic platforms
-- [ ] Templates for computer vision projects
-- [ ] Automated benchmarking tools
-
-### Long Term (Q4 2025+)
-- [ ] Complete AI tools ecosystem
-- [ ] Template marketplace
-- [ ] Integration with funding systems
-- [ ] Contributor certification
-
-## Additional Resources
-
-### Documentation
-- [Contributing Guide](CONTRIBUTING.md)
-- [Security Policy](.github/SECURITY.md)
-- [Support Guide](.github/SUPPORT.md)
-- [Code of Conduct](.github/CODE_OF_CONDUCT.md)
-
-### Useful Links
-- [Hugging Face Organization](https://huggingface.co/lcdev)
-- [Official Website](https://lcdesenvolvimentos.github.io/)
-- [Complete Documentation](https://lcdesenvolvimentos.github.io/docs/)
-- [Tutorials](https://lcdesenvolvimentos.github.io/tutorials/)
-
-### Learning
-- [AI Guide for Researchers](https://lcdesenvolvimentos.github.io/ai-guide/)
-- [MLOps Best Practices](https://lcdesenvolvimentos.github.io/mlops-guide/)
-- [Research Methodology](https://lcdesenvolvimentos.github.io/research-methodology/)
-
-## About LC Desenvolvimentos
-
-**LC Desenvolvimentos** is a company specialized in Artificial Intelligence research, specialized hardware, and software development. Our mission is to explore the frontiers of AI research, focusing on computational efficiency, specialized models, and brain-inspired architectures.
-
-### Our Mission
-- **Advanced Research**: Advance the state of the art in AI
-- **Collaboration**: Connect academia and industry
-- **Innovation**: Develop transformative solutions
-- **Education**: Share knowledge with the community
-
-### Where to Find Us
-- **Rio de Janeiro, RJ, Brazil**
-- **Email**: [lcdev@lcdesenvolvimentos.com.br](mailto:lcdev@lcdesenvolvimentos.com.br)
-- **LinkedIn**: [LC Desenvolvimentos](https://linkedin.com/company/lcdesenvolvimentos)
-- **Twitter**: [@LCDesenvolvimentos](https://twitter.com/lcdesenvolvimentos)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### Special Terms for Academic Research
-
-The template includes special terms for academic use and research collaborations, including:
-- Free use for academic purposes
-- Appropriate attribution in publications
-- Support for academia-industry collaborations
-- Commitment to ethics in AI research
 
 ---
 
-<div align="center">
+## Quick Start Example
 
-**Building the Future of Artificial Intelligence Together**
+Let's simulate a simple "Hello, World!" module.
 
-Made with heart by the LC Desenvolvimentos Team
+**1. Create the Verilog file (`hello_world.v`):**
 
-[Star this repo](https://github.com/LCDesenvolvimentos/LCDev.GitRepoTemplate) • 
-[Report a bug](https://github.com/LCDesenvolvimentos/LCDev.GitRepoTemplate/issues) • 
-[Request a feature](https://github.com/LCDesenvolvimentos/LCDev.GitRepoTemplate/issues)
+```verilog
+// hello_world.v
+module hello_world;
+  initial begin
+    $display("Hello, Taryon Suite World!");
+    $finish;
+  end
+endmodule
+```
 
-</div>
+**2. Simulate with Taryon Simulus:**
+
+```bash
+# Compile and run the simulation
+taryon-simulus -i hello_world.v
+
+# Expected Output:
+# Hello, Taryon Suite World!
+# VCD info: dumpfile sim.vcd opened for output.
+```
+
+**3. Synthesize with Taryon Synthara (for an FPGA target):**
+
+```bash
+# Synthesize the design
+taryon-synthara -i hello_world.v -p generic_fpga -o hello_world_synth.v
+
+# The output file 'hello_world_synth.v' will contain the gate-level netlist.
+```
+
+**4. Formally Verify with Taryon Veritas:**
+
+While this example has no properties to check, a typical command would look like this:
+
+```bash
+# Check properties defined in the design
+taryon-veritas -i my_design.v -t my_top_module -c properties.sdc
+```
+
+---
+
+## Documentation
+
+For in-depth guides, API references, and tutorials, please visit our official documentation:
+
+**[https://taryon-suite.readthedocs.io/](https://taryon-suite.readthedocs.io/)**
+
+---
+
+## Contributing
+
+We welcome contributions from the community! Whether you're fixing a bug, adding a feature, or improving documentation, your help is appreciated.
+
+Please see our [Contributing Guidelines](CONTRIBUTING.md) for more details.
+
+---
+
+## License
+
+Taryon Suite is licensed under the MIT License. See the \[LICENSE\](LICENSE) file for more information.
+
+---
+
+## Acknowledgments
+
+The Taryon Suite was inspired by the pioneers of both commercial and open-source EDA tools. We stand on the shoulders of giants like Cadence, Synopsys, Siemens EDA, as well as the dedicated communities behind Icarus Verilog, Verilator, and Yosys.
